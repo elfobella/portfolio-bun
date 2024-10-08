@@ -32,13 +32,13 @@ export default function Header() {
         </div>
         <div className="flex justify-center">
           <div className="flex dark:text-beige gap-2">
-            <a href="#">
+            <a href="#" target="_blank">
               <Instagram />
             </a>
-            <a href="#">
+            <a href="#" target="_blank">
               <Github />
             </a>
-            <a href="#">
+            <a href="#" target="_blank">
               <Linkedin />
             </a>
           </div>

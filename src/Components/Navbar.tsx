@@ -10,15 +10,27 @@ export default function Navbar() {
   );
 
   const handleScroll = () => {
-    const currScroll = window.scrollY;
-    if (currScroll > lastScrollPos) {
-      setIsSticky(true);
+    const currentScrollPos = window.scrollY;
+
+    // Eğer yukarı kaydırıyorsak navbar'ı göster, aşağı kaydırıyorsak gizle
+    if (currentScrollPos < lastScrollPos) {
+      setIsSticky(true); // Yukarı kaydırınca navbar geri gelsin
     } else {
-      setIsSticky(false);
+      setIsSticky(false); // Aşağı kaydırınca navbar gizlensin
     }
-    setLastScrollPos(currScroll);
+
+    setLastScrollPos(currentScrollPos);
   };
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup event listener on unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollPos]);
+  console.log(isSticky);
   // Dark Mode
   useEffect(() => {
     localStorage.setItem("theme", theme);
@@ -32,27 +44,17 @@ export default function Navbar() {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollPos]);
-
   return (
     <section
       id="Navbar"
-      className={`${isSticky ? "-top-20" : ""} transition-all  sticky top-0`}
+      className={`${isSticky ? "-top-20" : "top-0"}  transition-all  sticky`}
     >
       <div className="flex items-center justify-center">
         <div
           onMouseEnter={() => setIsHover(true)}
           className={`flex border border-head/10 items-center justify-center ${
-            isHover
-              ? "bg-beige backdrop-blur-lg w-72"
-              : "dark:bg-beige bg-head w-32"
-          } transition-all overflow-hidden duration-500 rounded-full h-12 mt-2`}
+            isHover ? "bg-beige/40 w-72" : "dark:bg-beige bg-head w-32"
+          } transition-all backdrop-blur-lg overflow-hidden duration-500 rounded-full h-12 mt-2`}
         >
           <ul className="">
             {isHover ? (
@@ -68,7 +70,9 @@ export default function Navbar() {
                     <li>Skills</li>
                   </a>
                   <button onClick={handleClick}>
-                    {theme === "dark" ? <Moon /> : <SunMedium />}
+                    <li className="p-1">
+                      {theme === "dark" ? <Moon /> : <SunMedium />}
+                    </li>
                   </button>
                 </div>
               </div>

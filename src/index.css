@@ -8,6 +8,6 @@
     scroll-behavior: smooth;
   }
   li {
-    @apply hover:bg-head hover:text-beige p-1.5 px-3 transition-all text-head text-sm font-bold rounded-full;
+    @apply hover:bg-head hover:text-beige  p-1.5 px-3 transition-all text-head dark:text-beige dark:hover:bg-beige dark:hover:text-head text-sm font-bold rounded-full;
   }
 }

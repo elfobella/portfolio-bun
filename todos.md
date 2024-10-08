@@ -12,9 +12,9 @@
 
 <!-- NOTE: Use section like this: Hero,Portfolio,Projects,etc. -->
 
-## [#] - Fancy Header Section
+## [x] - Fancy Header Section
 
-## [#] - Projects
+## [x] - Projects
 
 ## [#] - Knowledge (React,Laravel etc.)
 
