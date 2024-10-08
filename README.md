@@ -22,10 +22,4 @@
 
 ## [#] - Animations
 
-## [#] - Smooth Scrolls
-
-## [#] - Cookies
-
-## [#] - I can also able to add more project to my page
-
-## [#] - Footer for socials
+## [x] - Smooth Scrolls
