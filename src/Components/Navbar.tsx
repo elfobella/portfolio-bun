@@ -30,7 +30,6 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollPos]);
-  console.log(isSticky);
   // Dark Mode
   useEffect(() => {
     localStorage.setItem("theme", theme);

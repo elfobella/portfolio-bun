@@ -2,7 +2,7 @@ import Card from "./Card";
 
 export default function Projects() {
   return (
-    <section id="projects" className="my-24">
+    <section id="projects">
       <div className="flex flex-col gap-4 items-center bg-beige dark:bg-head border-2 border-head dark:border-beige dark:text-beige rounded-3xl pb-12 pt-4 px-20">
         <h3 className="text-5xl text-center font-bold py-4">Projects</h3>
         {/* TODO: CARD */}

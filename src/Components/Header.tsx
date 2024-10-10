@@ -4,16 +4,16 @@ export default function Header() {
   return (
     <section
       id="Header"
-      className="bg-beige border-2 border-head dark:border-beige dark:bg-head gap-4 p-5 rounded-full items-center"
+      className="bg-beige border-2 border-head dark:border-beige dark:bg-head gap-4 p-5 sm:rounded-full rounded-lg items-center"
     >
-      <div className="sm:flex items-center justify-between">
-        <div className="flex gap-4 items-center">
+      <div className="flex sm:flex-row flex-col gap-4 items-center">
+        <div className="flex flex-1 sm:flex-row flex-col  gap-4 items-center">
           <img
             src={Myself}
-            className="md:w-52 md:h-52 w-32 h-32 object-cover rounded-full"
+            className="w-52 h-52 object-cover rounded-full"
             alt=""
           />
-          <div itemScope>
+          <div className="sm:text-start text-center" itemScope>
             <h1
               itemProp="name"
               aria-label="Yunus Emre UÇAR"
@@ -30,7 +30,7 @@ export default function Header() {
             </h2>
           </div>
         </div>
-        <div className="flex justify-center">
+        <div>
           <div className="flex dark:text-beige gap-2">
             <a href="#" target="_blank">
               <Instagram />
