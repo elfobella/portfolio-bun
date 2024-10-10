@@ -40,6 +40,17 @@ export default function Card() {
           </svg>
         </a>
       </div>
+      <div className="p-2 flex gap-2">
+        <span className="inline-block text-head  border-2 border-head hover:bg-head hover:text-beige dark:hover:bg-beige dark:hover:text-head  dark:border-beige dark:text-beige rounded-lg px-3 py-1 text-sm font-semibold">
+          <a href="#skills">#Laravel</a>
+        </span>
+        <span className="inline-block text-head  border-2 border-head hover:bg-head hover:text-beige dark:hover:bg-beige dark:hover:text-head  dark:border-beige dark:text-beige rounded-lg px-3 py-1 text-sm font-semibold">
+          <a href="#skills">#Inertia</a>
+        </span>
+        <span className="inline-block text-head  border-2 border-head hover:bg-head hover:text-beige dark:hover:bg-beige dark:hover:text-head  dark:border-beige dark:text-beige rounded-lg px-3 py-1 text-sm font-semibold">
+          <a href="#skills">#Reactjs</a>
+        </span>
+      </div>
     </div>
   );
 }
