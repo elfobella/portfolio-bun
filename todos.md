@@ -16,16 +16,6 @@
 
 ## [x] - Projects
 
-## [#] - Knowledge (React,Laravel etc.)
+## [x] - Knowledge (React,Laravel etc.)
 
 ## [#] - My history
-
-## [#] - Animations
-
-## [#] - Smooth Scrolls
-
-## [#] - Cookies
-
-## [#] - I can also able to add more project to my page
-
-## [#] - Footer for socials

@@ -1,3 +1,5 @@
+import About from "./Components/About";
+import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import Info from "./Components/Info";
 import Navbar from "./Components/Navbar";
@@ -11,7 +13,9 @@ export default function App() {
         <Header />
         <Info />
         <Projects />
+        <About />
         <Skills />
+        <Footer />
       </div>
     </div>
   );
