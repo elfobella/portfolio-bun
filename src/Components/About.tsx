@@ -13,6 +13,7 @@ export default function About() {
           TAML and university at Yozgat Bozok. I have been working as a
           Fullstack Web Developer for over four years now.
         </p>
+        <strong>Contact: yunusemreucr11@gmail.com</strong>
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Moon, SunMedium } from "lucide-react";
+import { House, Moon, SunMedium } from "lucide-react";
 
 export default function Navbar() {
   const [isHover, setIsHover] = useState<boolean>(false);
@@ -52,13 +52,18 @@ export default function Navbar() {
         <div
           onMouseEnter={() => setIsHover(true)}
           className={`flex border border-head/10 items-center justify-center ${
-            isHover ? "bg-beige/40 w-72" : "dark:bg-beige bg-head w-32"
+            isHover ? "bg-beige/40 w-80" : "dark:bg-beige bg-head w-32"
           } transition-all backdrop-blur-lg overflow-hidden duration-500 rounded-full h-12 mt-2`}
         >
           <ul className="">
             {isHover ? (
               <div>
                 <div className="flex gap-2 items-center">
+                  <a href="#top">
+                    <li className="p-1">
+                      <House className="w-6 h-6 p-0" />
+                    </li>
+                  </a>
                   <a href="#projects">
                     <li>Projects</li>
                   </a>
