@@ -3,6 +3,7 @@ import React from "../assets/react.svg";
 import Inertia from "../assets/inertia-logo.svg";
 import Nextjs from "../assets/nextjs.svg";
 import { useEffect, useRef, useState } from "react";
+import Layout from "./Layout";
 
 export default function Skills() {
   const [isAnimate, setIsAnimate] = useState<boolean>(false);
@@ -35,8 +36,7 @@ export default function Skills() {
 
   return (
     <section id="skills" ref={secRef}>
-      <div className="flex flex-col gap-4 items-center bg-beige dark:bg-head border-2 border-head dark:border-beige dark:text-beige rounded-3xl pb-12 mb-20 pt-4 px-20">
-        <h3 className="text-5xl text-center font-bold py-4">Skills</h3>
+      <Layout title="Skills">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {knowledge.map((knw) => (
             <div
@@ -58,7 +58,7 @@ export default function Skills() {
             </div>
           ))}
         </div>
-      </div>
+      </Layout>
     </section>
   );
 }

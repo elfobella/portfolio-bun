@@ -8,7 +8,7 @@ import Skills from "./Components/Skills";
 export default function App() {
   return (
     <div className="dark:bg-primary -z-50 transition-all min-h-screen">
-      <div className="flex font-work tracking-tight max-w-7xl mx-auto px-4 flex-col gap-20">
+      <div className="flex font-work tracking-tight max-w-7xl mx-auto sm:px-4 flex-col gap-20">
         <Navbar />
         <Header />
         <Info />

@@ -15,9 +15,9 @@ export default function Info() {
 
 function InfoCard({ title, desc }: InfoCardProps) {
   return (
-    <div className="flex flex-col gap-2 items-center sm:[&:nth-child(2)]:px-20 [&:nth-child(2)]:px-10 sm:first:pr-20 sm:last:pl-20 first:pr-10 last:pl-10 last:border-0 border-r-2 text-head dark:text-beige border-head dark:border-beige">
-      <span className="sm:text-5xl text-3xl font-bold">{title}</span>
-      <span className="sm:text-2xl text-xl text-center">{desc}</span>
+    <div className="flex flex-col gap-2 items-center sm:[&:nth-child(2)]:px-20 [&:nth-child(2)]:px-8 sm:first:pr-20 sm:last:pl-20 first:pr-8 last:pl-8 last:border-0 border-r-2 text-head dark:text-beige border-head dark:border-beige">
+      <span className="sm:text-5xl text-xl font-bold">{title}</span>
+      <span className="sm:text-2xl text-center">{desc}</span>
     </div>
   );
 }
