@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import { House, Moon, SunMedium } from "lucide-react";
 
 export default function Navbar() {
-  const [isHover, setIsHover] = useState<boolean>(false);
   const [lastScrollPos, setLastScrollPos] = useState(0);
   const [isSticky, setIsSticky] = useState<boolean>(false);
   const [theme, setTheme] = useState<string>(
-    localStorage.getItem("theme") || "light"
+    localStorage.getItem("theme") || "dark"
   );
 
   const handleScroll = () => {
@@ -49,42 +48,31 @@ export default function Navbar() {
       className={`${isSticky ? "-top-20" : "top-0"}  transition-all  sticky`}
     >
       <div className="flex items-center justify-center">
-        <div
-          onMouseEnter={() => setIsHover(true)}
-          className={`flex border border-head/10 items-center justify-center ${
-            isHover ? "bg-beige/40 w-80" : "dark:bg-beige bg-head w-32"
-          } transition-all backdrop-blur-lg overflow-hidden duration-500 rounded-full h-12 mt-2`}
-        >
+        <div className="flex border border-head/10 items-center justify-center bg-beige/40 w-80 transition-all backdrop-blur-lg overflow-hidden duration-500 rounded-full h-12 mt-2">
           <ul className="">
-            {isHover ? (
-              <div>
-                <div className="flex gap-2 items-center">
-                  <a href="#top">
-                    <li className="p-1">
-                      <House className="w-6 h-6 p-0" />
-                    </li>
-                  </a>
-                  <a href="#projects">
-                    <li>Projects</li>
-                  </a>
-                  <a href="#about">
-                    <li>About</li>
-                  </a>
-                  <a href="#skills">
-                    <li>Skills</li>
-                  </a>
-                  <button onClick={handleClick}>
-                    <li className="p-1">
-                      {theme === "dark" ? <Moon /> : <SunMedium />}
-                    </li>
-                  </button>
-                </div>
+            <div>
+              <div className="flex gap-2 items-center">
+                <a href="#top">
+                  <li className="p-1">
+                    <House className="w-6 h-6 p-0" />
+                  </li>
+                </a>
+                <a href="#projects">
+                  <li>Projects</li>
+                </a>
+                <a href="#about">
+                  <li>About</li>
+                </a>
+                <a href="#skills">
+                  <li>Skills</li>
+                </a>
+                <button onClick={handleClick}>
+                  <li className="p-1">
+                    {theme === "dark" ? <Moon /> : <SunMedium />}
+                  </li>
+                </button>
               </div>
-            ) : (
-              <span className="text-sm dark:text-head text-beige font-bold">
-                👋 Hello There!
-              </span>
-            )}
+            </div>
           </ul>
         </div>
       </div>
