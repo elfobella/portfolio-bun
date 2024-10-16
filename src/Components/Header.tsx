@@ -32,13 +32,16 @@ export default function Header() {
         </div>
         <div>
           <div className="flex dark:text-beige gap-2">
-            <a href="#" target="_blank">
+            <a href="https://www.instagram.com/yunus.emreu/" target="_blank">
               <Instagram />
             </a>
-            <a href="#" target="_blank">
+            <a href="https://github.com/elfobella" target="_blank">
               <Github />
             </a>
-            <a href="#" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/yunus-emre-u%C3%A7ar-611538210/"
+              target="_blank"
+            >
               <Linkedin />
             </a>
           </div>
