@@ -4,7 +4,6 @@ import Inertia from "../assets/inertia-logo.svg";
 import Nextjs from "../assets/nextjs.svg";
 import { useEffect, useRef, useState } from "react";
 import Layout from "./Layout";
-import Tailwind from "../assets/tailwind.svg";
 
 export default function Skills() {
   const [isAnimate, setIsAnimate] = useState<boolean>(false);
@@ -13,7 +12,6 @@ export default function Skills() {
     { lang: "reactjs", src: React, percent: 90 },
     { lang: "inertia", src: Inertia, percent: 45 },
     { lang: "nextjs", src: Nextjs, percent: 75 },
-    { lang: "tailwindcss", src: Tailwind, percent: 100 },
   ];
 
   const secRef = useRef<HTMLDivElement>(null);
