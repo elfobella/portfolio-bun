@@ -19,7 +19,7 @@ export default function Skills() {
     const handleScroll = () => {
       if (secRef.current) {
         const rect = secRef.current.getBoundingClientRect();
-        if (rect.top < 280) {
+        if (rect.top < 650) {
           setIsAnimate(true);
         }
       }
