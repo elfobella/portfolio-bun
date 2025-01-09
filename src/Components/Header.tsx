@@ -1,51 +1,50 @@
-import Myself from "../assets/Myself.jpeg";
-import { Instagram, Github, Linkedin } from "lucide-react";
+import { motion } from "framer-motion";
+import { Github, Mail } from "lucide-react";
+
 export default function Header() {
   return (
-    <section
-      id="Header"
-      className="bg-beige border-2 border-head dark:border-beige dark:bg-head gap-4 p-5 sm:rounded-full rounded-lg items-center"
-    >
-      <div className="flex sm:flex-row flex-col gap-4 items-center">
-        <div className="flex flex-1 sm:flex-row flex-col  gap-4 items-center">
-          <img
-            src={Myself}
-            className="w-52 h-52 object-cover rounded-full"
-            alt=""
-          />
-          <div className="sm:text-start text-center" itemScope>
-            <h1
-              itemProp="name"
-              aria-label="Yunus Emre UÇAR"
-              className="font-extrabold bg-primary/20 dark:bg-inherit p-1 inline-block md:text-4xl text-2xl dark:text-beige text-primary"
-            >
-              Yunus Emre Uçar
-            </h1>
-            <h2
-              itemProp="jobTitle"
-              aria-label="Full-Stack Web Developer"
-              className="md:text-6xl text-4xl font-extrabold text-head dark:text-beige"
-            >
-              Full-Stack, <br /> Web Developer
-            </h2>
-          </div>
-        </div>
-        <div>
-          <div className="flex dark:text-beige gap-2">
-            <a href="https://www.instagram.com/yunus.emreu/" target="_blank">
-              <Instagram />
-            </a>
-            <a href="https://github.com/elfobella" target="_blank">
-              <Github />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/yunus-emre-u%C3%A7ar-611538210/"
-              target="_blank"
-            >
-              <Linkedin />
-            </a>
-          </div>
-        </div>
+    <section id="top" className="min-h-[90vh] flex items-center justify-center">
+      <div className="text-center space-y-6">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white"
+        >
+          Yunus Emre UÇAR
+        </motion.h1>
+        
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="text-lg sm:text-xl text-gray-600 dark:text-gray-400"
+        >
+          Full Stack Developer
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="flex items-center justify-center gap-4 pt-4"
+        >
+          <a
+            href="mailto:yunusemreucr11@gmail.com"
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-violet-500 to-purple-500 hover:opacity-90 rounded-lg transition-all shadow-md"
+          >
+            <Mail className="w-4 h-4" />
+            İletişime Geç
+          </a>
+          <a
+            href="https://github.com/elfobella"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium border border-gray-200 hover:border-violet-500 dark:border-gray-700 dark:hover:border-violet-500 text-gray-700 dark:text-white hover:text-violet-500 dark:hover:text-violet-400 rounded-lg transition-all"
+          >
+            <Github className="w-4 h-4" />
+            Github
+          </a>
+        </motion.div>
       </div>
     </section>
   );

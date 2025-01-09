@@ -1,0 +1,9 @@
+/* Primary Button */
+.btn-primary {
+  @apply inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-white bg-gradient-primary hover:opacity-90 rounded-lg transition-all shadow-md;
+}
+
+/* Secondary Button */
+.btn-secondary {
+  @apply inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-gray-700 dark:text-white border border-gray-300 dark:border-gray-700 hover:border-violet-500 dark:hover:border-violet-500 rounded-lg transition-all;
+} 

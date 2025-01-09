@@ -1,54 +1,63 @@
+import { motion } from "framer-motion";
+import { ExternalLink } from "lucide-react";
+
 interface CardProp {
   title: string;
   desc: string;
   link: string;
   langs: string[];
   hasUrl: boolean;
+  category: string;
 }
 
-export default function Card({ title, desc, link, langs, hasUrl }: CardProp) {
+export default function Card({ title, desc, link, langs, hasUrl, category }: CardProp) {
   return (
-    <div className="max-w-sm flex flex-col bg-beige border-2 border-head rounded-2xl  dark:bg-head dark:border-beige">
-      <div className="p-5 flex-1 text-start">
-        <a href="#">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-head dark:text-beige">
-            {title}
-          </h5>
-        </a>
-        <p className="mb-3 font-normal text-head/70 dark:text-beige/70">
-          {desc}
-        </p>
-        {hasUrl && (
-          <a
-            href={link}
-            className="inline-flex items-center px-3 py-2 text-sm font-bold text-center text-head  border-2 border-head hover:bg-head hover:text-beige dark:hover:bg-beige dark:hover:text-head  dark:border-beige dark:text-beige rounded-lg transition-all focus:ring-blue-300 dark:focus:ring-blue-800"
-          >
-            Read more
-            <svg
-              className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 14 10"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9"
-              />
-            </svg>
-          </a>
-        )}
-      </div>
-      <div className="pb-5 px-3 grid grid-cols-3 gap-2">
-        {langs.map((lang) => (
-          <span className="inline-block text-head  border-2 border-head hover:bg-head hover:text-beige dark:hover:bg-beige dark:hover:text-head  dark:border-beige dark:text-beige rounded-lg p-1 sm:text-sm text-xs font-semibold">
-            <a href="#skills">#{lang}</a>
-          </span>
-        ))}
-      </div>
+    <div className="group relative">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        whileHover={{ y: -5 }}
+        className="flex flex-col h-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+      >
+        <div className="p-6 flex-1">
+          <div className="mb-4">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+              {title}
+            </h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-3">
+              {desc}
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            {langs.map((lang) => (
+              <span
+                key={lang}
+                className="px-2.5 py-1 text-xs font-medium text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/30 rounded-full"
+              >
+                {lang}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-medium text-gray-500 dark:text-gray-400">
+              {category}
+            </span>
+            {hasUrl && (
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-500 hover:text-purple-600 dark:text-purple-400 dark:hover:text-purple-300"
+              >
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            )}
+          </div>
+        </div>
+      </motion.div>
     </div>
   );
 }
