@@ -7,55 +7,32 @@ import { Code2 } from "lucide-react";
 
 export default function Skills() {
   const skills = [
-    { 
-      name: "Laravel", 
-      icon: Laravel, 
+    {
+      name: "Laravel",
+      icon: Laravel,
       level: 65,
-      label: "Advanced"
+      label: "Advanced",
     },
-    { 
-      name: "React.js", 
-      icon: React, 
+    {
+      name: "React.js",
+      icon: React,
       level: 90,
-      label: "Expert"
+      label: "Expert",
     },
-    { 
-      name: "Inertia", 
-      icon: Inertia, 
+    {
+      name: "Inertia",
+      icon: Inertia,
       level: 45,
-      label: "Intermediate"
+      label: "Intermediate",
     },
-    { 
-      name: "Next.js", 
-      icon: Nextjs, 
+    {
+      name: "Next.js",
+      icon: Nextjs,
       level: 75,
-      label: "Advanced"
+      label: "Advanced",
     },
   ];
 
-<<<<<<< HEAD
-  const secRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const handleScroll = () => {
-      if (secRef.current) {
-        const rect = secRef.current.getBoundingClientRect();
-        if (rect.top < 650) {
-          setIsAnimate(true);
-        }
-      }
-    };
-
-    // Scroll olayını dinle
-    window.addEventListener("scroll", handleScroll);
-
-    // Temizleme işlemi
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-=======
->>>>>>> f86be0b (Redesign)
   return (
     <section id="skills" className="w-full max-w-6xl mx-auto px-4">
       <motion.div
@@ -94,11 +71,7 @@ export default function Skills() {
                   transition={{ type: "spring", stiffness: 300 }}
                   className="p-3 bg-violet-50 dark:bg-violet-900/20 rounded-lg shadow-sm"
                 >
-                  <img 
-                    src={skill.icon} 
-                    className="w-8 h-8" 
-                    alt={skill.name} 
-                  />
+                  <img src={skill.icon} className="w-8 h-8" alt={skill.name} />
                 </motion.div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-2">
@@ -120,7 +93,7 @@ export default function Skills() {
                       initial={{ width: "0%" }}
                       whileInView={{ width: `${skill.level}%` }}
                       viewport={{ once: true }}
-                      transition={{ duration: 1, delay: (index * 0.2) + 0.5 }}
+                      transition={{ duration: 1, delay: index * 0.2 + 0.5 }}
                       className="absolute top-0 left-0 h-full bg-gradient-to-r from-violet-500 to-purple-500 rounded-full"
                     />
                   </motion.div>
